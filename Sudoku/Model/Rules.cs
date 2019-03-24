@@ -40,7 +40,8 @@ namespace Sudoku.Model
         {
             //rows check
             for (int i = 0; i < rows; i++)
-                if (ArrayHasDuplicates(mat[i])) return false;
+                if (ArrayHasDuplicates(mat[i]))
+                    return false;
             //columns check
             int[] column = new int[rows];
             for (int i = 0; i < columns; i++)
@@ -49,7 +50,8 @@ namespace Sudoku.Model
                 {
                     column[j] = mat[j][i];
                 }
-                if (ArrayHasDuplicates(column)) return false;
+                if (ArrayHasDuplicates(column))
+                    return false;
             }
             //subgrids check
             int region_size = 3; //number of subgrids per row / column

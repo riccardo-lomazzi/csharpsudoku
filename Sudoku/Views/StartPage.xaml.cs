@@ -1,9 +1,5 @@
-﻿using Sudoku.Model;
-using Sudoku.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +16,19 @@ using System.Windows.Shapes;
 namespace Sudoku.Views
 {
     /// <summary>
-    /// Interaction logic for MatchPage.xaml
+    /// Interaction logic for StartPage.xaml
     /// </summary>
-    public partial class MatchPage : Page
+    public partial class StartPage : Page
     {
-        public MatchPage()
+        public StartPage()
         {
-            this.DataContext = new MatchPageViewModel();
             InitializeComponent();
+        }
+
+        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MatchPage());
+            //this.NavigationService.Navigate(new Uri("/MatchPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
